@@ -1,5 +1,9 @@
 import os
 
+# Prevent HuggingFace tokenizers from deadlocking the Streamlit server
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+# Disable ChromaDB telemetry to prevent network hanging
+os.environ["ANONYMIZED_TELEMETRY"] = "False"
 # Set HF cache to local directory so Render preserves it between build and deploy
 os.environ['HF_HOME'] = os.path.join(os.getcwd(), '.huggingface_cache')
 
