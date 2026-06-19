@@ -8,3 +8,4 @@ pypdf
 fpdf2
 python-dotenv
 pydantic
+pysqlite3-binary==0.5.2.post3
