@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: adsparkx-support-agent
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "streamlit run app.py --server.port $PORT --server.address 0.0.0.0"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: GEMINI_API_KEY
+        sync: false
